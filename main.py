@@ -5,6 +5,7 @@ import requests
 import json 
 import emoji
 from deep_translator import GoogleTranslator
+from sauvegarde import keep_alive
 client = discord.Client()
 
 #variable et constantes
@@ -25,6 +26,8 @@ reponses_admissible = ["C'est bien \t"+emoji.emojize(':thumbs_up:')+" \tde voir 
 
 sollicitations3 = ["Comment", "comment", "allez"]
 reponses_valables = ["je suis plein d'énérgie et vous ?", "j'admire votre enthousiasme!\n quoi de neuf?" ]
+
+inspirations = ["inpire", "Inspire", "Inspire moi" ]
 
 my_secret = os.environ['TOKEN']
 
@@ -64,7 +67,7 @@ async def on_message(message):
     await message.channel.send(random.choice(reponses_valables))
 
   
-  if msg.startswith('inspire'):
+  if msg.startswith('inspire' ):
     quote = obtenir_citation()
     await message.channel.send(quote)
 
@@ -74,6 +77,6 @@ async def on_message(message):
     value = "\n\n**HISTORIQUE DE REUNION**\n"
     r1 = "reunion 1\n"
     await message.channel.send(value+r1+'https://drive.google.com/file/d/1QQdt-Xeo4MH_lHALlP6_zOlaFA4vikDd/view?usp=sharing')
-
+keep_alive()
 client.run(my_secret)
 
