@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "repl_python3_Elliot-Cube"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "Une intélligence artificielle"
+authors = ["Saliou Cisse salioucisse52@gmail.com"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -10,6 +10,7 @@ discord = "^1.0.1"
 googletrans = "^3.0.0"
 emoji = "^1.2.0"
 flask = "^2.0.1"
+deep_translator = "^1.4.4"
 
 [tool.poetry.dev-dependencies]
 

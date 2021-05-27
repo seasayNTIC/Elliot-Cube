@@ -1,10 +1,10 @@
+from deep_translator import GoogleTranslator
 import discord 
 import os
 import random 
 import requests
 import json 
 import emoji
-from deep_translator import GoogleTranslator
 from sauvegarde import keep_alive
 client = discord.Client()
 
@@ -43,6 +43,8 @@ def obtenir_citation():
 
 
 
+
+
 @client.event 
 async  def on_ready():
   print("Nous sommes connectes à {0.user}"
@@ -70,7 +72,12 @@ async def on_message(message):
   if msg.startswith('inspire' ):
     quote = obtenir_citation()
     await message.channel.send(quote)
+  
+  if msg.startswith('Inspire' ):
+    quote = obtenir_citation()
+    await message.channel.send(quote)
 
+ 
   
   
   if msg.startswith('reunion'):
